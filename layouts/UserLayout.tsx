@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useTheme } from '@/components/ThemeProvider'
 import MobileMenuSheet from '@/components/MobileMenuSheet'
@@ -12,6 +13,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isEarnOpen, setIsEarnOpen] = useState(false)
     const { theme, setTheme } = useTheme()
+    const pathname = usePathname()
 
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -38,8 +40,8 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                                 </Link>
                                 <nav className="flex items-center gap-1 lg:gap-2 mx-6">
                                     <Link className="relative group" href="/dashboard">
-                                        <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layout-dashboard h-4 w-4 transition-transform group-hover:scale-110 text-yellow-500" aria-hidden="true">
+                                        <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 ${pathname === '/dashboard' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`lucide lucide-layout-dashboard h-4 w-4 transition-transform group-hover:scale-110 ${pathname === '/dashboard' ? 'text-yellow-500' : ''}`} aria-hidden="true">
                                                 <rect width="7" height="9" x="3" y="3" rx="1"></rect>
                                                 <rect width="7" height="5" x="14" y="3" rx="1"></rect>
                                                 <rect width="7" height="9" x="14" y="12" rx="1"></rect>
@@ -47,7 +49,6 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                                             </svg>
                                             Dashboard
                                         </div>
-                                        <div className="absolute inset-0 bg-yellow-500/5 blur-md rounded-xl -z-0"></div>
                                     </Link>
                                     <DropdownMenu.Root>
                                         <DropdownMenu.Trigger asChild>
@@ -99,19 +100,19 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                                         </DropdownMenu.Portal>
                                     </DropdownMenu.Root>
                                     <Link className="relative group" href="/mining">
-                                        <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 text-muted-foreground hover:text-foreground hover:bg-white/5">
+                                        <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 ${pathname === '/mining' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pickaxe h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true"><path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3L11 9.999"></path><path d="M15.973 4.027A13 13 0 0 0 5.902 2.373c-1.398.342-1.092 2.158.277 2.601a19.9 19.9 0 0 1 5.822 3.024"></path><path d="M16.001 11.999a19.9 19.9 0 0 1 3.024 5.824c.444 1.369 2.26 1.676 2.603.278A13 13 0 0 0 20 8.069"></path><path d="M18.352 3.352a1.205 1.205 0 0 0-1.704 0l-5.296 5.296a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l5.296-5.296a1.205 1.205 0 0 0 0-1.704z"></path></svg>
                                             Mining
                                         </div>
                                     </Link>
                                     <Link className="relative group" href="/casino">
-                                        <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 text-muted-foreground hover:text-foreground hover:bg-white/5">
+                                        <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 ${pathname === '/casino' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gamepad2 lucide-gamepad-2 h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>
                                             Casino
                                         </div>
                                     </Link>
                                     <Link className="relative group" href="/contest">
-                                        <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 text-muted-foreground hover:text-foreground hover:bg-white/5">
+                                        <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative z-10 ${pathname === '/contest' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trophy h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"></path><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"></path><path d="M18 9h1.5a1 1 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"></path><path d="M6 9H4.5a1 1 0 0 1 0-5H6"></path></svg>
                                             Contest
                                         </div>
@@ -153,13 +154,13 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                                             </DropdownMenu.Content>
                                         </DropdownMenu.Portal>
                                     </DropdownMenu.Root>
-                                    <Link href="/leaderboards" className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative group text-muted-foreground hover:text-foreground hover:bg-white/5">
+                                    <Link href="/leaderboards" className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative group ${pathname === '/leaderboards' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
                                         <div className="flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-award h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
                                             Leaderboards
                                         </div>
                                     </Link>
-                                    <Link href="/advertise" className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative group text-muted-foreground hover:text-foreground hover:bg-white/5">
+                                    <Link href="/advertise" className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 relative group ${pathname === '/advertise' ? 'text-yellow-500 bg-yellow-500/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'text-muted-foreground hover:text-foreground hover:bg-white/5'}`}>
                                         <div className="flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-megaphone h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"></path><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"></path><path d="M8 6v8"></path></svg>
                                             Advertise
@@ -206,7 +207,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                 {/* Mobile Bottom Nav */}
                 <div className="md:hidden fixed bottom-0 left-0 right-0 z-[50] border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pb-safe">
                     <div className="grid grid-cols-5 h-16 items-center">
-                        <Link className="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary" href="/dashboard">
+                        <Link className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${pathname === '/dashboard' ? 'text-yellow-500' : 'text-muted-foreground hover:text-foreground'}`} href="/dashboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-house h-5 w-5" aria-hidden="true">
                                 <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
                                 <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -222,7 +223,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                             </svg>
                             <span className="text-[10px] font-medium">Earn</span>
                         </button>
-                        <Link className="flex flex-col items-center justify-center w-full h-full space-y-1 text-muted-foreground hover:text-foreground" href="/mining">
+                        <Link className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${pathname === '/mining' ? 'text-yellow-500' : 'text-muted-foreground hover:text-foreground'}`} href="/mining">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                                 <path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3L11 9.999"></path>
                                 <path d="M15.973 4.027A13 13 0 0 0 5.902 2.373c-1.398.342-1.092 2.158.277 2.601a19.9 19.9 0 0 1 5.822 3.024"></path>
