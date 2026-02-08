@@ -1067,7 +1067,7 @@ const Mining = () => {
                                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/50">
                                     <div className="text-xs text-muted-foreground font-mono">Page 1 of 4</div>
                                     <div className="flex items-center gap-2">
-                                        <button data-slot="button" data-variant="outline" data-size="sm" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" disabled="">
+                                        <button data-slot="button" data-variant="outline" data-size="sm" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" disabled={true}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left h-4 w-4" aria-hidden="true">
                                                 <path d="m15 18-6-6 6-6"></path>
                                             </svg>
@@ -1138,7 +1138,7 @@ const Mining = () => {
                                                 </svg>
                                             </button>
                                         </h3>
-                                        <div data-state="closed" id="radix-_r_7d_" hidden="" role="region" aria-labelledby="radix-_r_7c_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
+                                        <div data-state="closed" id="radix-_r_7d_" hidden role="region" aria-labelledby="radix-_r_7c_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
                                     </div>
                                     <div data-state="closed" data-orientation="vertical" data-slot="accordion-item" className="border-b last:border-b-0">
                                         <h3 data-orientation="vertical" data-state="closed" className="flex">
@@ -1149,7 +1149,7 @@ const Mining = () => {
                                                 </svg>
                                             </button>
                                         </h3>
-                                        <div data-state="closed" id="radix-_r_7f_" hidden="" role="region" aria-labelledby="radix-_r_7e_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
+                                        <div data-state="closed" id="radix-_r_7f_" hidden role="region" aria-labelledby="radix-_r_7e_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
                                     </div>
                                     <div data-state="closed" data-orientation="vertical" data-slot="accordion-item" className="border-b last:border-b-0">
                                         <h3 data-orientation="vertical" data-state="closed" className="flex">
@@ -1160,7 +1160,7 @@ const Mining = () => {
                                                 </svg>
                                             </button>
                                         </h3>
-                                        <div data-state="closed" id="radix-_r_7h_" hidden="" role="region" aria-labelledby="radix-_r_7g_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
+                                        <div data-state="closed" id="radix-_r_7h_" hidden role="region" aria-labelledby="radix-_r_7g_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
                                     </div>
                                     <div data-state="closed" data-orientation="vertical" data-slot="accordion-item" className="border-b last:border-b-0">
                                         <h3 data-orientation="vertical" data-state="closed" className="flex">
@@ -1171,7 +1171,7 @@ const Mining = () => {
                                                 </svg>
                                             </button>
                                         </h3>
-                                        <div data-state="closed" id="radix-_r_7j_" hidden="" role="region" aria-labelledby="radix-_r_7i_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
+                                        <div data-state="closed" id="radix-_r_7j_" hidden role="region" aria-labelledby="radix-_r_7i_" data-orientation="vertical" data-slot="accordion-content" className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style={{ '--radix-accordion-content-height': 'var(--radix-collapsible-content-height)', '--radix-accordion-content-width': 'var(--radix-collapsible-content-width)' } as React.CSSProperties}></div>
                                     </div>
                                 </div>
                             </div>
