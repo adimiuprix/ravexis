@@ -26,11 +26,20 @@ export function ThemeProvider({
     storageKey = 'hashbin-theme',
     ...props
 }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<Theme>(
-        () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-    )
+    const [theme, setTheme] = useState<Theme>(defaultTheme)
+    const [isMounted, setIsMounted] = useState(false)
 
     useEffect(() => {
+        setIsMounted(true)
+        const storedTheme = (typeof window !== 'undefined' ? localStorage.getItem(storageKey) : null) as Theme | null
+        if (storedTheme) {
+            setTheme(storedTheme)
+        }
+    }, [storageKey])
+
+    useEffect(() => {
+        if (!isMounted) return
+
         const root = window.document.documentElement
 
         root.classList.remove('light', 'dark')
@@ -46,13 +55,15 @@ export function ThemeProvider({
         }
 
         root.classList.add(theme)
-    }, [theme])
+    }, [theme, isMounted])
 
     const value = {
         theme,
-        setTheme: (theme: Theme) => {
-            localStorage.setItem(storageKey, theme)
-            setTheme(theme)
+        setTheme: (newTheme: Theme) => {
+            setTheme(newTheme)
+            if (typeof window !== 'undefined') {
+                localStorage.setItem(storageKey, newTheme)
+            }
         },
     }
 

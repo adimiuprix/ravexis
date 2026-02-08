@@ -5,10 +5,12 @@ import Link from 'next/link'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useTheme } from '@/components/ThemeProvider'
 import MobileMenuSheet from '@/components/MobileMenuSheet'
+import MobileEarnSheet from '@/components/MobileEarnSheet'
 import Image from 'next/image'
 
-const PanelLayout = ({ children }: { children: React.ReactNode }) => {
+const UserLayout = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isEarnOpen, setIsEarnOpen] = useState(false)
     const { theme, setTheme } = useTheme()
 
     const toggleTheme = () => {
@@ -205,13 +207,13 @@ const PanelLayout = ({ children }: { children: React.ReactNode }) => {
                 <div className="md:hidden fixed bottom-0 left-0 right-0 z-[50] border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pb-safe">
                     <div className="grid grid-cols-5 h-16 items-center">
                         <Link className="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary" href="/dashboard">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 fill-current">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-house h-5 w-5" aria-hidden="true">
                                 <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
                                 <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             </svg>
                             <span className="text-[10px] font-medium">Home</span>
                         </Link>
-                        <button className="flex flex-col items-center justify-center w-full h-full space-y-1 text-muted-foreground hover:text-foreground">
+                        <button onClick={() => setIsEarnOpen(true)} className="flex flex-col items-center justify-center w-full h-full space-y-1 text-muted-foreground hover:text-foreground">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                                 <circle cx="8" cy="8" r="6"></circle>
                                 <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
@@ -253,8 +255,9 @@ const PanelLayout = ({ children }: { children: React.ReactNode }) => {
 
             {/* Panel Menu */}
             <MobileMenuSheet open={isMenuOpen} onOpenChange={setIsMenuOpen} />
+            <MobileEarnSheet open={isEarnOpen} onOpenChange={setIsEarnOpen} />
         </>
     )
 }
 
-export default PanelLayout
+export default UserLayout
