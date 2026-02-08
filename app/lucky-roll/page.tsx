@@ -93,7 +93,7 @@ const LuckyRoll = () => {
                                             <span className="text-[10px] font-black text-muted-foreground uppercase tracking-wider w-full text-center">Security Check:</span>
                                             <div className="flex items-center justify-center gap-3 bg-background/50 p-2 pr-4 rounded-xl border border-white/10 w-full max-w-[200px]">
                                                 <div className="px-3 py-1.5 bg-yellow-500/10 rounded-lg border border-yellow-500/20 text-yellow-500 font-bold font-mono text-sm">3 + 2 = ?</div>
-                                                <input className="w-12 bg-transparent text-center font-bold text-lg focus:outline-none" placeholder="?" type="number" value="" />
+                                                <input className="w-12 bg-transparent text-center font-bold text-lg focus:outline-none" placeholder="?" type="number" defaultValue="" />
                                             </div>
                                             <div className="flex justify-center h-[65px] overflow-hidden rounded-lg scale-90 origin-center w-full">
                                                 <div>
@@ -102,8 +102,9 @@ const LuckyRoll = () => {
                                             </div>
                                         </div>
                                         <div className="opacity-0 absolute -z-10 pointer-events-none" aria-hidden="true">
-                                            <input tabindex="-1" autocomplete="off" type="text" value="" name="full_name_verification" />
-                                            <input tabindex="-1" autocomplete="off" type="email" value="" name="user_registration_email" /></div>
+                                            <input tabIndex={-1} autoComplete="off" type="text" defaultValue="" name="full_name_verification" />
+                                            <input tabIndex={-1} autoComplete="off" type="email" defaultValue="" name="user_registration_email" />
+                                        </div>
                                         <button data-slot="button" data-variant="default" data-size="default" className="inline-flex items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 px-4 py-2 has-[&gt;svg]:px-3 w-full h-14 text-lg font-black gap-2 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-widest relative overflow-hidden group bg-gradient-to-r from-yellow-500 to-orange-600 text-black border-none hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]" disabled="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-5 h-5 fill-current group-hover:rotate-12 transition-transform" aria-hidden="true">
                                                 <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
