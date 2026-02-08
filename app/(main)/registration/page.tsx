@@ -1,7 +1,7 @@
+"use client"
 import { useState } from 'react'
-import { Link } from "react-router-dom"
-import FormInput from '../components/FormInput';
-import logo from '../assets/logo.png'
+import Link from 'next/link'
+import FormInput from '@/components/FormInput'
 
 const Regist = () => {
     const [firstName, setFirstName] = useState<string>('')
@@ -18,16 +18,6 @@ const Regist = () => {
                         <div className="absolute -inset-0.5 bg-linear-to-r from-yellow-500/20 to-orange-500/20 rounded-[2.5rem] blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                         <div className="relative flex flex-col bg-background/60 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden">
                             <div className="pt-10 pb-4 px-10 text-center space-y-4">
-                                <div className="flex justify-center">
-                                    <div className="rounded-2xl shadow-2xl ring-1 ring-white/10 relative" style={{ width: 56, height: 56 }}>
-                                        <span data-slot="avatar" className="flex size-8 shrink-0 overflow-hidden absolute inset-0 h-full w-full rounded-none dark:hidden">
-                                            <img data-slot="avatar-image" className="aspect-square size-full object-contain" alt="logo" src={logo} />
-                                        </span>
-                                        <span data-slot="avatar" className="size-8 shrink-0 overflow-hidden absolute inset-0 hidden h-full w-full rounded-none dark:block">
-                                            <img data-slot="avatar-image" className="aspect-square size-full object-contain" alt="logo" src={logo} />
-                                        </span>
-                                    </div>
-                                </div>
                                 <div className="space-y-1">
                                     <h1 className="text-4xl font-black tracking-tight text-yellow-500 flex items-center justify-center gap-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user-plus w-8 h-8 text-yellow-500" aria-hidden="true">
@@ -119,7 +109,7 @@ const Regist = () => {
                                             Existing member? 
                                             <Link 
                                                 className="text-yellow-500 hover:text-yellow-400 underline underline-offset-8 font-bold transition-all" 
-                                                to="/login"
+                                                href="/login"
                                             >
                                                 Access Portal
                                             </Link>

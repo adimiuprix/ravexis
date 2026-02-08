@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+import Link from "next/link"
 
-const About = () => {
+export default function About() {
     return (
         <main className="grow pt-24">
             <div className="container mx-auto max-w-4xl px-4 py-20">
@@ -13,7 +13,7 @@ const About = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="p-8 rounded-4xl bg-white/5 border border-white/10 space-y-4">
                             <div className="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center text-orange-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-globe w-6 h-6" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe w-6 h-6" aria-hidden="true">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                                     <path d="M2 12h20"></path>
@@ -24,7 +24,7 @@ const About = () => {
                         </div>
                         <div className="p-8 rounded-4xl bg-white/5 border border-white/10 space-y-4">
                             <div className="w-12 h-12 rounded-2xl bg-yellow-500/20 flex items-center justify-center text-yellow-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-shield-check w-6 h-6" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield-check w-6 h-6" aria-hidden="true">
                                     <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                                     <path d="m9 12 2 2 4-4"></path>
                                 </svg>
@@ -61,8 +61,8 @@ const About = () => {
                         <h2 className="text-4xl font-black text-white tracking-tight">Ready to join the movement?</h2>
                         <p className="text-white/80 text-lg max-w-xl mx-auto">Become a part of the fastest-growing decentralized network and start claiming your share today.</p>
                         <div className="pt-4">
-                            <Link to="/registration" className="inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-zap w-5 h-5 fill-current" aria-hidden="true">
+                            <Link href="/registration" className="inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-5 h-5 fill-current" aria-hidden="true">
                                     <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                                 </svg>
                                 Get Early Access
@@ -73,6 +73,4 @@ const About = () => {
             </div>
         </main>
     );
-};
-
-export default About;
+}

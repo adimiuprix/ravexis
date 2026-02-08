@@ -17,7 +17,7 @@ const Technology: React.FC = () => {
             <div className="container mx-auto max-w-7xl px-4 py-20">
                 <div className="text-center space-y-6 mb-24">
                     <div className="inline-flex items-center rounded-full border border-yellow-500/20 bg-yellow-500/5 px-3 py-1 text-sm font-medium text-yellow-600 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cpu w-4 h-4 mr-2" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu w-4 h-4 mr-2" aria-hidden="true">
                             <path d="M12 20v2"></path>
                             <path d="M12 2v2"></path>
                             <path d="M17 20v2"></path>
@@ -42,7 +42,7 @@ const Technology: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2 space-y-6">
                             <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-zap w-8 h-8" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-8 h-8" aria-hidden="true">
                                     <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                                 </svg>
                             </div>
@@ -63,7 +63,7 @@ const Technology: React.FC = () => {
                     <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
                         <div className="lg:w-1/2 space-y-6">
                             <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center text-yellow-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-network w-8 h-8" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-network w-8 h-8" aria-hidden="true">
                                     <rect x="16" y="16" width="6" height="6" rx="1"></rect>
                                     <rect x="2" y="16" width="6" height="6" rx="1"></rect>
                                     <rect x="9" y="2" width="6" height="6" rx="1"></rect>
@@ -78,7 +78,7 @@ const Technology: React.FC = () => {
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent"></div>
                             <div className="grid grid-cols-3 gap-8 text-center relative z-10">
                                 <div className="flex flex-col items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-database w-8 h-8 text-neutral-500" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-database w-8 h-8 text-neutral-500" aria-hidden="true">
                                         <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                                         <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
                                         <path d="M3 12A9 3 0 0 0 21 12"></path>
@@ -86,7 +86,7 @@ const Technology: React.FC = () => {
                                     <div className="text-xs text-neutral-500">Off-chain DB</div>
                                 </div>
                                 <div className="flex flex-col items-center gap-2 justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-refresh-cw w-8 h-8 text-orange-500 animate-spin-slow" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-refresh-cw w-8 h-8 text-orange-500 animate-spin-slow" aria-hidden="true">
                                         <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
                                         <path d="M21 3v5h-5"></path>
                                         <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
@@ -95,7 +95,7 @@ const Technology: React.FC = () => {
                                     <div className="text-xs text-orange-500 font-bold">Sync Gateway</div>
                                 </div>
                                 <div className="flex flex-col items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-network w-8 h-8 text-green-500" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-network w-8 h-8 text-green-500" aria-hidden="true">
                                         <rect x="16" y="16" width="6" height="6" rx="1"></rect>
                                         <rect x="2" y="16" width="6" height="6" rx="1"></rect>
                                         <rect x="9" y="2" width="6" height="6" rx="1"></rect>
