@@ -14,7 +14,7 @@ const Transactions = () => {
                         <div className="p-4 md:p-6 border-b border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 bg-muted/20">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 rounded-full bg-primary/10">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-history w-5 h-5 text-primary" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-history w-5 h-5 text-primary" aria-hidden="true">
                                         <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
                                         <path d="M3 3v5h5"></path>
                                         <path d="M12 7v5l4 2"></path>
@@ -28,7 +28,7 @@ const Transactions = () => {
                                 <div className="group p-4 hover:bg-muted/30 transition-colors grid grid-cols-1 md:grid-cols-12 gap-4 items-center" style={{ opacity: 1, transform: "none" }}>
                                     <div className="md:col-span-3 flex items-center gap-4">
                                         <div className="p-3 rounded-xl shadow-inner bg-red-500/10 text-red-500 shadow-red-500/10">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-up-right h-5 w-5" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-up-right h-5 w-5" aria-hidden="true">
                                                 <path d="M7 7h10v10"></path>
                                                 <path d="M7 17 17 7"></path>
                                             </svg>
@@ -41,7 +41,7 @@ const Transactions = () => {
                                     </div>
                                     <div className="md:col-span-3 flex md:justify-center">
                                         <div className="px-3 py-1 rounded-full border text-[10px] font-black uppercase tracking-widest flex items-center gap-2 bg-yellow-500/5 border-yellow-500/20 text-yellow-500">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-clock w-3 h-3" aria-hidden="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-clock w-3 h-3" aria-hidden="true">
                                                 <path d="M12 6v6l4 2"></path>
                                                 <circle cx="12" cy="12" r="10"></circle>
                                             </svg>
