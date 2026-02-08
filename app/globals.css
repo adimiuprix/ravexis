@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@supports (color:lab(0% 0 0)) {
+    .dark {
+        --background: lab(2.75381% 0 0);
+        --foreground: lab(98.26% 0 0);
+        --card: lab(7.78201% -.0000149012 0);
+        --card-foreground: lab(98.26% 0 0);
+        --font-ruberoid: 'Ruberoid', system-ui, sans-serif;
+        --popover: lab(7.78201% -.0000149012 0);
+        --popover-foreground: lab(98.26% 0 0);
+        --primary: lab(90.952% 0 -.0000119209);
+        --primary-foreground: lab(7.78201% -.0000149012 0);
+        --secondary: lab(15.204% 0 -.00000596046);
+        --secondary-foreground: lab(98.26% 0 0);
+        --muted: lab(15.204% 0 -.00000596046);
+        --muted-foreground: lab(66.128% -.0000298023 .0000119209);
+        --accent: lab(15.204% 0 -.00000596046);
+        --accent-foreground: lab(98.26% 0 0);
+        --destructive: lab(63.7053% 60.745 31.3109);
+        --border: lab(100% 0 0 / .1);
+        --input: lab(100% 0 0 / .15);
+        --ring: lab(48.496% 0 0);
+        --chart-1: lab(36.9089% 35.0961 -85.6872);
+        --chart-2: lab(66.9756% -58.27 19.5419);
+        --chart-3: lab(72.7183% 31.8672 97.9407);
+        --chart-4: lab(52.0183% 66.11 -78.2316);
+        --chart-5: lab(56.101% 79.4328 31.4532);
+        --sidebar: lab(7.78201% -.0000149012 0);
+        --sidebar-foreground: lab(98.26% 0 0);
+        --sidebar-primary: lab(36.9089% 35.0961 -85.6872);
+        --sidebar-primary-foreground: lab(98.26% 0 0);
+        --sidebar-accent: lab(15.204% 0 -.00000596046);
+        --sidebar-accent-foreground: lab(98.26% 0 0);
+        --sidebar-border: lab(100% 0 0 / .1);
+        --sidebar-ring: lab(48.496% 0 0);
+    }
 }
