@@ -12,6 +12,7 @@ import Image from 'next/image'
 const UserLayout = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isEarnOpen, setIsEarnOpen] = useState(false)
+    const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
     const { theme, setTheme } = useTheme()
     const pathname = usePathname()
 
@@ -188,14 +189,73 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
                                     </svg>
                                     <span className="sr-only">Toggle theme</span>
                                 </button>
-                                <button className="p-2 hover:bg-accent rounded-md relative">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
-                                    <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
-                                </button>
-                                <div className="relative h-8 w-8 rounded-full overflow-hidden bg-muted">
-                                    <span className="flex items-center justify-center h-full w-full">M</span>
-                                    <span className="absolute bottom-0 right-0 block rounded-full ring-2 ring-background bg-green-500 h-2 w-2"></span>
-                                </div>
+
+                                {/* User Action */}
+                                <DropdownMenu.Root open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
+                                    <DropdownMenu.Trigger asChild>
+                                        <button className="relative h-8 w-8 rounded-full overflow-hidden bg-muted cursor-pointer focus:outline-none ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                                            <span className="flex items-center justify-center h-full w-full font-medium text-xs">M</span>
+                                            <span className="absolute bottom-0 right-0 block rounded-full ring-2 ring-background bg-green-500 h-2 w-2"></span>
+                                        </button>
+                                    </DropdownMenu.Trigger>
+                                    <DropdownMenu.Portal>
+                                        <DropdownMenu.Content
+                                            className="min-w-[240px] bg-background/95 backdrop-blur-md border border-border rounded-xl p-1.5 shadow-xl z-50 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+                                            sideOffset={8}
+                                            align="end"
+                                        >
+                                            <div className="px-3 py-2 border-b border-border/50 mb-1">
+                                                <div className="text-sm font-bold text-foreground">Werna Serta</div>
+                                                <div className="text-xs text-muted-foreground">tronvego@gmail.com</div>
+                                            </div>
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-white/5 focus:bg-white/5 data-highlighted:bg-white/5 data-highlighted:text-foreground text-muted-foreground hover:text-foreground">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chart-no-axes-column"><path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" /></svg>
+                                                    Metrics
+                                                </div>
+                                            </DropdownMenu.Item>
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-white/5 focus:bg-white/5 data-highlighted:bg-white/5 data-highlighted:text-foreground text-muted-foreground hover:text-foreground">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                                                    Edit Profile
+                                                </div>
+                                            </DropdownMenu.Item>
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-white/5 focus:bg-white/5 data-highlighted:bg-white/5 data-highlighted:text-foreground text-muted-foreground hover:text-foreground">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>
+                                                    Security Settings
+                                                </div>
+                                            </DropdownMenu.Item>
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-white/5 focus:bg-white/5 data-highlighted:bg-white/5 data-highlighted:text-foreground text-muted-foreground hover:text-foreground">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                                                    Affiliates
+                                                </div>
+                                            </DropdownMenu.Item>
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-white/5 focus:bg-white/5 data-highlighted:bg-white/5 data-highlighted:text-foreground text-muted-foreground hover:text-foreground">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trophy"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
+                                                    Levels & EXP
+                                                </div>
+                                            </DropdownMenu.Item>
+
+                                            <div className="h-px bg-border/50 my-1 mx-1" />
+
+                                            <DropdownMenu.Item className="group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg cursor-pointer outline-none transition-colors hover:bg-red-500/10 focus:bg-red-500/10 data-highlighted:bg-red-500/10 data-highlighted:text-red-500 text-muted-foreground hover:text-red-500">
+                                                <div className="flex items-center gap-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>
+                                                    Log out
+                                                </div>
+                                            </DropdownMenu.Item>
+                                        </DropdownMenu.Content>
+                                    </DropdownMenu.Portal>
+                                </DropdownMenu.Root>
+
                             </div>
                         </div>
                     </div>
